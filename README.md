@@ -1,24 +1,21 @@
-# route-app
+# Тестовое задание BizProfi
 
-## Project setup
+## Простое
+
+### Клонируйте или скачайте репозиторий
+
+```
+git clone
+```
+
+### Установите npm зависимости
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Запустите проект
+
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

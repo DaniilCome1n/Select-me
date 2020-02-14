@@ -1,52 +1,51 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomepageView from '../views/HomepageView.vue'
-import SelectedItemsView from '../views/SelectedItemsView.vue'
-import SelectItemsView from '../views/SelectItemsView.vue'
-import CombinationView from '../views/CombinationView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import HomepageView from "../views/HomepageView.vue";
+import SelectedItemsView from "../views/SelectedItemsView.vue";
+import SelectItemsView from "../views/SelectItemsView.vue";
+import CombinationView from "../views/CombinationView.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/homepage',
-    name: 'homepageView',
+    path: "/homepage",
+    name: "homepageView",
     component: HomepageView,
-    meta:{
-      title: 'Главная',
-    },
-    
+    meta: {
+      title: "Главная"
+    }
   },
   {
-    path: '/selected-items',
-    name: 'selectedItemsView',
+    path: "/selected-items",
+    name: "selectedItemsView",
     component: SelectedItemsView,
-    meta:{
-      title: 'Компонент отображения выбранных элементов',
-    },
+    meta: {
+      title: "Компонент отображения выбранных элементов"
+    }
   },
   {
-    path: '/select-items',
-    name: 'selectItemsView',
+    path: "/select-items",
+    name: "selectItemsView",
     component: SelectItemsView,
-    meta:{
-      title: 'Компонент выбора элементов',
-    },
+    meta: {
+      title: "Компонент выбора элементов"
+    }
   },
   {
-    path: '/combination',
-    name: 'combinationView',
+    path: "/combination",
+    name: "combinationView",
     component: CombinationView,
-    meta:{
-      title: 'Объединение компонентов SelectItems и SelectedItems',
-    },
-  },
-]
+    meta: {
+      title: "Объединение компонентов SelectItems и SelectedItems"
+    }
+  }
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
   routes
-})
+});
 
-export default router
+export default router;
