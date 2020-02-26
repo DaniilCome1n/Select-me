@@ -1,6 +1,8 @@
 <template>
   <div>
-    <button id="show-modal" @click="showModal = true" class="btn-show-modal">Выбрать элементы</button>
+    <button id="show-modal" @click="showModal = true" class="btn-show-modal">
+      Выбрать элементы
+    </button>
     <div name="modal" v-if="showModal">
       <transition name="modal">
         <div class="modal-mask">
@@ -8,13 +10,17 @@
             <div class="modal-container">
               <div class="modal-header">
                 <slot name="header">
-                  <h1>{{modalHeader}}</h1>
+                  <h1>{{ modalHeader }}</h1>
                 </slot>
               </div>
 
               <div class="modal-body">
                 <slot name="body">
-                  <input type="text" v-model="searchedItem" class="modal-body-Input" />
+                  <input
+                    type="text"
+                    v-model="searchedItem"
+                    class="modal-body-Input"
+                  />
                   <div class="modal-body-ItemsBox">
                     <div v-for="item in searchedItems" :key="item.id">
                       <input
@@ -23,21 +29,21 @@
                         :value="item"
                         :disabled="isSelectLimit && !isSelected(item)"
                       />
-                      <label>{{item.title}}</label>
+                      <label>{{ item.title }}</label>
                     </div>
                   </div>
 
                   <div class="modal-body-SelectedItemsBox">
                     <div
-                      v-for="(selectedItem,index) in localSelectedItems"
+                      v-for="(selectedItem, index) in localSelectedItems"
                       :key="selectedItem.id"
                       class="classSelectedItem"
                     >
-                      {{selectedItem.title}}
+                      {{ selectedItem.title }}
                       <a @click="remove(index)" class="removeButton">X</a>
                     </div>
                   </div>
-                  <p>Выбрано {{localSelectedItems.length}} элементов</p>
+                  <p>Выбрано {{ localSelectedItems.length }} элементов</p>
                 </slot>
               </div>
 
@@ -45,9 +51,19 @@
                 <slot name="footer">
                   <button
                     class="modal-default-button"
-                    @click="showModal = false,$emit('selected_items',localSelectedItems)"
-                  >Добавить элементы</button>
-                  <button class="modal-default-button" @click="showModal = false">Отмена</button>
+                    @click="
+                      (showModal = false),
+                        $emit('selected_items', localSelectedItems)
+                    "
+                  >
+                    Добавить элементы
+                  </button>
+                  <button
+                    class="modal-default-button"
+                    @click="showModal = false"
+                  >
+                    Отмена
+                  </button>
                 </slot>
               </div>
             </div>
@@ -111,6 +127,7 @@ export default {
   border-radius: 5px;
   margin-bottom: 20px;
   outline: none;
+  cursor: pointer;
   transition: 0.1s;
 }
 
