@@ -8,7 +8,7 @@
         tag="li"
       >{{route.meta.title}}</router-link>
     </ul>
-    <router-view class="test"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -33,10 +33,11 @@ export default {
     padding: 20px 0 0 0;
     background-color: #e0dbdb38;
     border-right: 1px solid #9991914d;
-    width: 300px;
+    width: 310px;
     height: 100%;
 
     li {
+      padding: 25px 0 0 10px;
       display: block;
       width: 300px;
       height: 50px;

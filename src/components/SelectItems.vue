@@ -1,12 +1,6 @@
 <template>
   <div>
-    <!-- <div class="itemsBox">
-            <div  v-for="(item,index) in localSelectedItems" :key="item.id" class="classSelectedItem" >
-                {{item.title}} <a @click="remove(index)" class="removeButton">X</a>
-            </div>
-    </div>-->
-
-    <button id="show-modal" @click="showModal = true">Выбрать элементы</button>
+    <button id="show-modal" @click="showModal = true" class="btn-show-modal">Выбрать элементы</button>
     <div name="modal" v-if="showModal">
       <transition name="modal">
         <div class="modal-mask">
@@ -61,8 +55,6 @@
         </div>
       </transition>
     </div>
-    <!-- <modal name="modal" v-if="showModal" @selected_items="showSelectedItems" @close="showModal = false"  :items="items" :selectedItems="selectedItems" >
-    </modal>-->
   </div>
 </template>
 
@@ -110,6 +102,23 @@ export default {
 </script>
 
 <style lang="scss">
+.btn-show-modal {
+  background: #5e8d78;
+  box-shadow: none;
+  border: none;
+  height: 30px;
+  color: rgb(212, 253, 225);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: 0.1s;
+}
+
+.btn-show-modal:active {
+  background-color: #65cf9f;
+  color: rgb(94, 112, 100);
+  outline: none;
+}
 .modal-mask {
   position: fixed;
   z-index: 9998;

@@ -21,6 +21,7 @@ html,
 body {
   height: 100%;
   font-family: "Open Sans", sans-serif;
+
   #app {
     height: 100%;
   }
